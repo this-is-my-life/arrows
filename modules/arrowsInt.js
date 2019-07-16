@@ -12,7 +12,6 @@ module.exports.interpret = (target) => {
   }
   
   let data = fs.readFileSync(target).toString('utf8')
-  let memory = {}
   let converted = ''
   
   data.split('\n').forEach((line) => {
@@ -52,7 +51,8 @@ module.exports.interpret = (target) => {
 
     if (line.endsWith('->')) converted += '}'
   })
-  
+
+  console.log(converted)
   converted = new Function(converted)
   return converted()
 }
