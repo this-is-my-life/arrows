@@ -1,0 +1,22 @@
+{
+  "name": "arrows",
+  "version": "0.1.0",
+  "description": "The Programing language based on JavaScript",
+  "main": "arrows.js",
+  "scripts": {
+    "test": "node arrows.js test/helloworld.arr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PMHStudio/arrows.git"
+  },
+  "keywords": [
+    "language"
+  ],
+  "author": "PMH Studio / PMH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PMHStudio/arrows/issues"
+  },
+  "homepage": "https://github.com/PMHStudio/arrows#readme"
+}
