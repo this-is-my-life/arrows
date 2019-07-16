@@ -16,7 +16,6 @@ module.exports.interpret = (target) => {
   
   data.split('\n').forEach((line) => {
     line = line.split('=>')[0]
-    converted += '\n'
     let arrowArray = line.split('<-')
     let cmd = arrowArray[0] ? arrowArray[0].trim().toLowerCase() : ''
     let arg0 = arrowArray[1] ? arrowArray[1].trim() : ''
@@ -50,9 +49,15 @@ module.exports.interpret = (target) => {
     }
 
     if (line.endsWith('->')) converted += '}'
+    converted += '\n'
   })
 
-  console.log(converted)
+  if (!fs.existsSync('./tmp/')) {
+    fs.mkdirSync('./tmp/')
+  }
+
+  fs.writeFileSync('./tmp/converted-' + Math.floor(Math.random() * 999999) + '.js', converted)
+
   converted = new Function(converted)
   return converted()
 }
