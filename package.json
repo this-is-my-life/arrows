@@ -4,7 +4,9 @@
   "description": "The Programing language based on JavaScript",
   "main": "arrows.js",
   "scripts": {
-    "test": "node arrows.js test/helloworld.arr"
+    "test": "echo.&&echo.&&echo test:helloworld    : Basic hello world print program&&echo test:setif         : Set varable and if expression",
+    "test:helloworld": "node arrows.js test/helloworld.arr",
+    "test:setif": "node arrows.js \"test/set&if.arr\""
   },
   "repository": {
     "type": "git",

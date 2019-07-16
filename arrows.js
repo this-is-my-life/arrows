@@ -30,5 +30,6 @@ Options:
   process.exit(0)
 }
 
+console.log('-----------\n')
 let returnCode = require('./modules/arrowsInt').interpret(targetFile)
-console.log('\nProcess Ended with code ' + returnCode)
+console.log('\n-----------\nProcess Ended with code ' + returnCode)
