@@ -9,11 +9,16 @@
 'use strict'
 
 const version = require('./package.json').version
+let modeSelector = 'normal'
 
 // Flag check
 if (process.argv.includes('-v') || process.argv.includes('--version')) {
   console.log(`Arrows v${version}`)
   process.exit(0)
+}
+
+if (process.argv.includes('-w') || process.argv.includes('--wtfmode')) {
+  modeSelector = 'wtf'
 }
 
 const targetFile = process.argv[2]
@@ -31,5 +36,5 @@ Options:
 }
 
 console.log('-----------\n')
-let returnCode = require('./modules/arrowsInt').interpret(targetFile)
+let returnCode = require('./modules/arrowsInt').interpret(targetFile, modeSelector)
 console.log('\n-----------\nProcess Ended with code ' + returnCode)
